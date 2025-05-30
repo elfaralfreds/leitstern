@@ -1,7 +1,7 @@
 # Fly.io
 
 Create:
-> flyctl apps create datastar-fastendpoints-demo --org personal
+> flyctl apps create leitstern --org personal
 
 Deploy:
 > flyctl deploy --config .\fly.demo.toml
@@ -11,6 +11,8 @@ Allocate IP:
 
 Scale:
 > flyctl scale count --config .\fly.demo.toml 1 --yes
+
+# Local 
 
 Local build:
 > podman build -f .\Dockerfile . -t demo --log-level debug

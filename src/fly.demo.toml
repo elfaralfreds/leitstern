@@ -1,4 +1,4 @@
-app = 'datastar-fastendpoints-demo'
+app = "leitstern"
 primary_region = 'ams'
 
 [build]

@@ -12,19 +12,19 @@ RUN apt-get update \
 WORKDIR /src
 
 # Copy the project file and restore dependencies
-COPY FastDatastar/*.csproj ./FastDatastar/
-COPY FastDatastar.sln ./FastDatastar.sln
+COPY Leitstern/*.csproj ./Leitstern/
+COPY Leitstern.sln ./Leitstern.sln
 RUN dotnet restore .
 
 # Copy the rest of the application code
 COPY . .
 
 # Build the application
-WORKDIR /src/FastDatastar
+WORKDIR /src/Leitstern
 
 RUN npm install
 RUN npm run build:css
-RUN dotnet publish FastDatastar.csproj -c Release -o /app/publish
+RUN dotnet publish Leitstern.csproj -c Release -o /app/publish
 
 # Use the official .NET 9 runtime image as a runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
@@ -42,4 +42,4 @@ ENV ASPNETCORE_URLS=http://+:8080
 ENV ASPNETCORE_ENVIRONMENT=Production
 
 # Set the entry point for the application
-ENTRYPOINT ["dotnet", "FastDatastar.dll"]
+ENTRYPOINT ["dotnet", "Leitstern.dll"]
