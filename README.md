@@ -3,13 +3,13 @@
 # Leitstern
 Project to contain my current hypermedia focused stack using dotnet and the progress with different use-cases/examples.
 
-### Demo
+## Demo
 
 Current state ( should be ) running here: https://leitstern.fly.dev/
 
-### Run locally
+## Run locally
 
-Go to `src/FastDatastar`
+Go to `src/Leitstern`
 
 Run following command to initialize package managers
 > npm run init
@@ -21,6 +21,19 @@ Run following command to initialize package managers
 ( *Will run `dotnet watch run` and `tailwind css cli` concurrently* )
 
 More details for commands in the package.json
+
+### Auth0
+
+Configuration for Auth0 is in user-secrets
+
+Go to `src/Leitstern`
+
+List current secret values:
+> dotnet user-secrets list
+
+Set value
+> dotnet user-secrets set Auth0:Domain "<your Domain>"
+> 
 
 ## Docs
 
