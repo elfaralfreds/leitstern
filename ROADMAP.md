@@ -29,7 +29,6 @@
 ## Backlog / 🍂 Later
 
 - Implementation
-  - Authentication with Auth0
   - NATS
   - FastEndpoints: 404 UI endpoint should return a 404 status code
   - FastEndpoints: Hot-reload endpoints registration if path has changed

@@ -31,13 +31,13 @@ Go to `src/Leitstern`
 List current secret values:
 > dotnet user-secrets list
 
-Set value
+Set values
 > dotnet user-secrets set Auth0:Domain "<your Domain>"
-> 
+> dotnet user-secrets set Auth0:ClientId "<your clientid>"
+> dotnet user-secrets set Auth0:ClientSecret "<your secret>"
 
 ## Docs
 
-- [Changelog](CHANGELOG.md)
 - [Roadmap](ROADMAP.md)
 
 ## References

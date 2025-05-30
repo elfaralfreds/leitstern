@@ -18,9 +18,6 @@ builder.Configuration
 var auth0Domain = builder.Configuration["Auth0:Domain"];
 var auth0ClientId = builder.Configuration["Auth0:ClientId"];
 var auth0ClientSecret = builder.Configuration["Auth0:ClientSecret"];
-Console.WriteLine($"Auth0 Domain: {auth0Domain}");
-Console.WriteLine($"Auth0 ClientId: {auth0ClientId}");
-Console.WriteLine($"Auth0 ClientSecret: {auth0ClientSecret}");
 
 builder.Services
     .AddFluid()
