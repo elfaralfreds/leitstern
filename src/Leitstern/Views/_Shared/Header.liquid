@@ -1,26 +1,83 @@
-<header class="mt-8 py-4 text-base">
-  <div class="max-w-screen-lg mx-auto px-4">
-    <div class="flex flex-row gap-4 mb-2 py-6 justify-between">
-      <div class="flex gap-4">
-        <a href="/" target="_blank" aria-label="Visit Datastar website">
-          <img src="/images/maskot.png" alt="Profile" class="h-[80px] -mt-[20px]" />
-        </a>
-        <a
-          href="https://github.com/elfaralfreds/DatastarAndFastEndpointsExamples"
-          target="_blank"
-          aria-label="Visit Elfar's GitHub profile"
-        >
-          <img src="/images/elfar.jpg" alt="Profile" class="h-[40px] w-[40px] rounded-full" />
-        </a>
-        <a href="/" style="text-decoration: none; cursor: pointer; color: #fff;">
-            <h1 class="text-2xl leading-[40px]">
-                .Net + Datastar + FastEndpoints
-            </h1>
-        </a>
-      </div>
-      <div class="flex gap-4 leading-[40px]">
-        {% rendersection headerbuttons %}
+{% comment %}
+  <header class="mt-8 py-4 text-base">
+    <div class="max-w-screen-lg mx-auto px-4">
+      <div class="flex flex-row gap-4 mb-2 py-6 justify-between">
+        <div class="flex gap-4">
+          <a href="/" target="_blank" aria-label="Visit Datastar website">
+            <img src="/images/maskot.png" alt="Profile" class="h-[80px] -mt-[20px]" />
+          </a>
+          <a
+            href="https://github.com/elfaralfreds/DatastarAndFastEndpointsExamples"
+            target="_blank"
+            aria-label="Visit Elfar's GitHub profile"
+          >
+            <img src="/images/elfar.jpg" alt="Profile" class="h-[40px] w-[40px] rounded-full" />
+          </a>
+          <a href="/" style="text-decoration: none; cursor: pointer; color: #fff;">
+              <h1 class="text-2xl leading-[40px]">
+                  Leitstern - .net + Datastar
+              </h1>
+          </a>
+        </div>
+        <div class="flex gap-4 leading-[40px]">
+          {% rendersection headerbuttons %}
+        </div>
       </div>
     </div>
-  </div>
+  </header>
+{% endcomment %}
+
+<header class="flex flex-col antialiased">
+  <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-900 dark:border-gray-800 order-1 border-b">
+    <div class="max-w-screen-lg mx-auto flex justify-start items-start mt-4">
+      <div class="flex flex-shrink-0 justify-start items-center">
+        <a href="/" class="flex mr-6">
+          <img src="/images/maskot.png" alt="Profile" class="h-[80px] -mt-[20px]">
+        </a>
+      </div>
+
+      <div class="flex flex-shrink-0 justify-between items-center ml-4 lg:order-2">
+        <button
+          type="button"
+          id="toggleMobileMenuButton"
+          data-collapse-toggle="toggleMobileMenu"
+          class="items-center p-2 text-gray-500 rounded-lg md:ml-2 md:hidden hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+        >
+          <span class="sr-only">Open menu</span>
+          <svg
+            class="w-[18px] h-[18px]"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <nav
+    id="toggleMobileMenu"
+    class="hidden order-3 bg-white border-b border-gray-200 shadow-sm dark:bg-gray-900 md:block dark:border-gray-800 md:order-2"
+  >
+    <div class="py-3 px-4 lg:px-6">
+      <div class="max-w-screen-lg mx-auto flex flex-col justify-between items-center md:flex-row">
+        <ul class="flex flex-col order-2 mt-0 w-full text-sm font-medium bg-gray-50 rounded-lg border border-gray-200 md:flex-row md:order-1 md:bg-white dark:bg-gray-800 dark:border-gray-700 dark:md:bg-gray-900 md:rounded-none md:border-0">
+            {% for item in _Leitstern.NavigationContext.Items %}
+            <li>
+                <a
+                    href="{{ item.Link }}"
+                    class="block py-3 px-4 rounded-lg text-primary-600 hover:text-primary-700 dark:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover-bg-gray-80 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700"
+                    aria-current="page"
+                    >
+                    {{ item.Label }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
 </header>

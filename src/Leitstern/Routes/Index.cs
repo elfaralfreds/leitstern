@@ -1,5 +1,6 @@
 using Leitstern.Helpers;
 using FastEndpoints;
+using Microsoft.AspNetCore.Components.Routing;
 
 namespace Leitstern.Routes;
 
@@ -13,6 +14,6 @@ public class Index : EndpointWithoutRequest
 
     public override async Task HandleAsync(CancellationToken ct)
     {
-        await Results.Extensions.View("Sites/Frontpage", new { }).ExecuteAsync(this.HttpContext);
+        await Results.Extensions.View("Sites/Frontpage", _.Leitstern()).ExecuteAsync(this.HttpContext);
     }
 }

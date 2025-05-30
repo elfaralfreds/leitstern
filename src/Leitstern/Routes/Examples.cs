@@ -14,7 +14,11 @@ public class Index : EndpointWithoutRequest
     public override async Task HandleAsync(CancellationToken ct)
     {
         await SendStringAsync(
-            await Results.Extensions.ViewAsString(this.HttpContext.Duplicate(), "Sites/Examples/Default", new { }),
+            await Results.Extensions.ViewAsString(
+                this.HttpContext.Duplicate(),
+                "Sites/Examples/Default",
+                _.Leitstern()
+            ),
             contentType: "text/html"
         );
     }
